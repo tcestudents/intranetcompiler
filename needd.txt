@@ -1,0 +1,12 @@
+regg
+register1
+fprofile
+sprofile
+freg
+fregister
+home
+fhome
+leaderboard
+leaderboard1
+logout
+flogout

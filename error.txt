@@ -1,0 +1,3 @@
+C:\Windows\TEMP\ccmbApGX.o:main.c:(.text+0x16): undefined reference to `print'
+C:\Windows\TEMP\ccmbApGX.o:main.c:(.text+0x22): undefined reference to `print'
+collect2: ld returned 1 exit status
