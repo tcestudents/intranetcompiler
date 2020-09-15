@@ -1,0 +1,40 @@
+<?php 
+include 'connection.php';
+$con=OpenCon("student");
+if((isset($_REQUEST['name']))&&(isset($_REQUEST['department']))&&(isset($_REQUEST['regno']))&&(isset($_REQUEST['email']))&&(isset($_REQUEST['year']))&&(isset($_REQUEST['p1'])))
+{
+$name=$_REQUEST['name'];
+$department=$_REQUEST['department'];
+$regno=$_REQUEST['regno'];
+$email=$_REQUEST['email'];
+$year=$_REQUEST['year'];
+$pass=$_REQUEST['p1'];
+}
+$errors = array(); 
+$q = "SELECT * FROM student WHERE email='$email'";
+$result = $con->query($q);
+
+?>
+
+<html>
+<head>
+<script>
+function onl(){
+<?php
+$result = $con->query($q);
+if ($result->num_rows > 0) {
+	echo "alert(\" Email Id Exist\")";
+	//	header("location:regg.php");	
+	}
+else
+{echo "alert(\"Registered successfully\")";
+//echo $email;
+$sql="INSERT INTO `student`(`name`, `department`, `regno`, `year`, `email`, `pass`,`score`) VALUES ('$name','$department','$regno','$year','$email','$pass','0')";
+$res=mysqli_query($con,$sql);	//header("location:Slog.php");
+}	
+?>}
+
+	
+</script>
+</head>
+<body onload="onl()" ></body></html>
